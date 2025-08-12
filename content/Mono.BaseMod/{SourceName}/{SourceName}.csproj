@@ -15,27 +15,24 @@
 		<{Game}Data>{AppDataPath}</{Game}Data>
 	</PropertyGroup>
 	<ItemGroup>
-		<Reference Include="$({Game}InstallDir)\{GameDataPath}\Managed\*.dll" Publicize="true" Private="false" />
-		<Reference Remove="$({Game}InstallDir)\{GameDataPath}\Managed\System*.dll" />
-		<Reference Remove="$({Game}InstallDir)\{GameDataPath}\Managed\mscorlib.dll*" />
-		<Reference Include="$({Game}InstallDir)\BepInEx\core\*.dll" Private="false" />
-	</ItemGroup>
-	<ItemGroup>
-		<None Include="Info.json" CopyToOutputDirectory="PreserveNewest" />
+		<Reference Include="$({Game}InstallDir)\Managed\*.dll" Publicize="true" Private="false" />
+		<Reference Include="$({Game}InstallDir)\..\BepInEx\core\*.dll" Private="false" />
+		<Reference Remove="$({Game}InstallDir)\..\BepInEx\core\0Harmony20.dll" />
+		<Reference Remove="$({Game}InstallDir)\Managed\System*.dll" />
+		<Reference Remove="$({Game}InstallDir)\Managed\mscorlib.dll*" />
 	</ItemGroup>
 	<Target Name="Deploy" AfterTargets="Build">
 		<ItemGroup>
 			<Files Include="$(TargetDir)\**\*.*" />
 		</ItemGroup>
 
-		<Copy SourceFiles="@(Files)" DestinationFiles="@(Files->'$({Game}InstallDir)\BepInEx\plugins\$(AssemblyName)\%(RecursiveDir)%(Filename)%(Extension)')" />
+		<Copy SourceFiles="@(Files)" DestinationFiles="@(Files->'$({Game}InstallDir)\..\BepInEx\plugins\$(AssemblyName)\%(RecursiveDir)%(Filename)%(Extension)')" />
 		<ZipDirectory SourceDirectory="$(MSBuildProjectDirectory)\$(OutputPath)" DestinationFile="$(MSBuildProjectDirectory)\$(OutputPath)\..\$(AssemblyName)-$(Version).zip" Overwrite="true" />
 	</Target>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
 		<PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" IncludeAssets="build; contentfiles" Version="0.4.2" PrivateAssets="all" />
 		<PackageReference Include="MicroUtils.HarmonyAnalyzers" IncludeAssets="runtime; build; native; contentfiles; analyzers" Version="*-*" PrivateAssets="all" />
-		<PackageReference Include="BepInEx.Analyzers" Version="*-*" PrivateAssets="all" />
 	</ItemGroup>
 	<Target Name="GenerateCustomPropsFile" Condition="$({Game}InstallDir) == ''">
 		<Exec Command="findstr /C:&quot;Mono path[0]&quot; &quot;$({Game}Data)\{LogFileName}&quot;" IgnoreExitCode="true" ConsoleToMSBuild="true">

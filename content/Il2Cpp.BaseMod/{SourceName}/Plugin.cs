@@ -8,22 +8,23 @@ using UnityEngine;
 
 namespace {SourceName};
 
-public static class Main : BasePlugin {
+[BepInPlugin(Main.PLUGIN_GUID, Main.PLUGIN_NAME, Main.PLUGIN_VERSION)]
+public class Main : BasePlugin {
     public const string PLUGIN_GUID = "{SourceName}";
     public const string PLUGIN_NAME = "{Description}";
     public const string PLUGIN_VERSION = "{Version}";
     internal static Harmony HarmonyInstance;
-    internal static ManualLogSource Log;
+    internal new static ManualLogSource Log;
 
-    private override void Load() {
+    public override void Load() {
         Log = base.Log;
         HarmonyInstance = new Harmony(PLUGIN_GUID);
         try {
             HarmonyInstance.PatchAll(Assembly.GetExecutingAssembly());
         } catch {
-            HarmonyInstance.UnpatchAll(PLUGIN_GUID);
+            HarmonyInstance.UnpatchSelf();
             throw;
         }
-        Logger.LogInfo($"Plugin {PLUGIN_GUID} is loaded!");
+        Log.LogInfo($"Plugin {PLUGIN_GUID} is loaded!");
     }
 }

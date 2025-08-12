@@ -63,7 +63,7 @@
 			"description": "Regex that is applied to the log file to extract the game path",
 			"datatype": "text",
 			"replaces": "{ScannerRegex}",
-			"defaultValue": "^\\[Subsystems\\] Discovering subsystems at path (.*?)/UnitySubsystems$"
+			"defaultValue": "\\[Subsystems\\] Discovering subsystems at path (.*?)/UnitySubsystems$"
 		}
 	}
 }

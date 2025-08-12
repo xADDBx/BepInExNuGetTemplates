@@ -70,7 +70,7 @@
 			"description": "Regex that is applied to the log file to extract the game path",
 			"datatype": "text",
 			"replaces": "{ScannerRegex}",
-			"defaultValue": "^Mono path\\[0\\] = '(.*?)/{GameDataPath}/Managed'$"
+			"defaultValue": "^Mono path\\[0\\] = '(.*?)/Managed'$"
 		}
 	}
 }

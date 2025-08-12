@@ -15,9 +15,11 @@
 - Either create a new project based on the respective template via Visual Studio GUI or
 - Create the project via CLI:
   - Open Windows command prompt (cmd.exe) in the directory which should contain project folder
-  - `dotnet new <TemplateName> -n <ModID> -d "<Mod Name>" -g "<Game Name>" -a "<Path/To/Game/AppData>" -data "<GameDataFolderName>"`  (Replace the `<value>` placeholder with actual values; See a list of TemplateNames just below.)
-  - e.g. `dotnet new bepinexmonomod -n MyAmazingMod -d "My Amazing Mod" -g Peak -a "%LocalAppData%Low\LandCrab\PEAK" -data "PEAK_Data"`
+  - `dotnet new <TemplateName> -n <ModID> -D "<Mod Name>" -G "<Game Name>" -A "<Path/To/Game/AppData>" -P "<GameDataFolderName>"`  (Replace the `<value>` placeholder with actual values; See a list of TemplateNames just below.)
   - Open the resulting project (open the .sln file with Visual Studio)
+  - Examples: 
+    - `dotnet new bepinexmonomod -n MyAmazingMod -D "My Amazing Mod" -G Peak -A "$(LocalAppData)Low\LandCrab\PEAK" -P "PEAK_Data"`
+    - `dotnet new bepinexil2cppmod -n MyAmazingIl2CppMod -D "My Amazing Mod" -G NoRestForTheWicked -A "$(LocalAppData)Low\Moon Studios\NoRestForTheWicked"` (Note: Il2Cpp mods don't have a -P option)
 
 ## Existing Template:
 

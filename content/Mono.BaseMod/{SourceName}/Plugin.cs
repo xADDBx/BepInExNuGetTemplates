@@ -7,22 +7,23 @@ using UnityEngine;
 
 namespace {SourceName};
 
-public static class Main : BaseUnityPlugin {
+[BepInPlugin(Main.PLUGIN_GUID, Main.PLUGIN_NAME, Main.PLUGIN_VERSION)]
+public class Main : BaseUnityPlugin {
     public const string PLUGIN_GUID = "{SourceName}";
     public const string PLUGIN_NAME = "{Description}";
     public const string PLUGIN_VERSION = "{Version}";
     internal static Harmony HarmonyInstance;
     internal static ManualLogSource Log;
 
-    private void Awake() {
+    internal void Awake() {
         Log = Logger;
         HarmonyInstance = new Harmony(PLUGIN_GUID);
         try {
             HarmonyInstance.PatchAll(Assembly.GetExecutingAssembly());
         } catch {
-            HarmonyInstance.UnpatchAll(PLUGIN_GUID);
+            HarmonyInstance.UnpatchSelf();
             throw;
         }
-        Logger.LogInfo($"Plugin {PLUGIN_GUID} is loaded!");
+        Log.LogInfo($"Plugin {PLUGIN_GUID} is loaded!");
     }
 }

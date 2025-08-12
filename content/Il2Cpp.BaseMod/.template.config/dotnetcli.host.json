@@ -3,31 +3,31 @@
 	"symbolInfo": {
 		"TargetFramework": {
 			"longName": "targetframework",
-			"shortName": "t"
+			"shortName": "T"
 		},
 		"Description": {
 			"longName": "description",
-			"shortName": "d"
+			"shortName": "D"
 		},
 		"Version": {
 			"longName": "version",
-			"shortName": "v"
+			"shortName": "V"
 		},
 		"Game": {
 			"longName": "gamename",
-			"shortName": "g"
+			"shortName": "G"
 		},
 		"AppDataPath": {
 			"longName": "appdatapath",
-			"shortName": "a"
+			"shortName": "A"
 		},
 		"LogFileName": {
 			"longName": "logfile",
-			"shortName": "l"
+			"shortName": "L"
 		},
 		"ScannerRegex": {
 			"longName": "regex",
-			"shortName": "r"
+			"shortName": "R"
 		}
 	}
 }
