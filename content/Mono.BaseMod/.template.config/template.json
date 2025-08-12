@@ -1,0 +1,76 @@
+{
+	"$schema": "http://json.schemastore.org/template",
+	"author": "ADDB",
+	"classifications": [
+		"BepInEx",
+		"Mod",
+		"Mono"
+	],
+	"identity": "BepInExMonoMod",
+	"name": "BepInEx mod for Unity Mono",
+	"shortName": "bepinexmonomod",
+	"tags": {
+		"language": "C#",
+		"type": "project"
+	},
+	"preferNameDirectory": true,
+	"sourceName": "{SourceName}",
+	"symbols": {
+		"TargetFramework": {
+			"type": "parameter",
+			"description": "The target framework for the project",
+			"datatype": "text",
+			"replaces": "{TargetFramework}",
+			"defaultValue": "net481"
+		},
+		"Description": {
+			"type": "parameter",
+			"description": "Mod display name",
+			"datatype": "text",
+			"replaces": "{Description}",
+			"defaultValue": "Template Mod"
+		},
+		"Version": {
+			"type": "parameter",
+			"description": "Mod version",
+			"datatype": "text",
+			"replaces": "{Version}",
+			"defaultValue": "1.0.0"
+		},
+		"Game": {
+			"type": "parameter",
+			"description": "Game Name",
+			"datatype": "text",
+			"replaces": "{Game}",
+			"isRequired": true
+		},
+		"AppDataPath": {
+			"type": "parameter",
+			"description": "Path to the AppData folder of the game, should look something like \"$(LocalAppData)Low\\Company Name\\Game Name\"",
+			"datatype": "text",
+			"replaces": "{AppDataPath}",
+			"isRequired": true
+		},
+		"GameDataPath": {
+			"type": "parameter",
+			"description": "Name of the _Data folder (which contains e.g. the Managed folder)",
+			"datatype": "text",
+			"replaces": "{GameDataPath}",
+			"isRequired": true
+		},
+		"LogFileName": {
+			"type": "parameter",
+			"description": "Name of the log file that is scanned for the game path",
+			"datatype": "text",
+			"replaces": "{LogFileName}",
+			"defaultValue": "Player.log"
+		},
+		"ScannerRegex": {
+			"type": "parameter",
+			"description": "Regex that is applied to the log file to extract the game path",
+			"datatype": "text",
+			"replaces": "{ScannerRegex}",
+			"defaultValue": "^Mono path\\[0\\] = '(.*?)/{GameDataPath}/Managed'$"
+		}
+	}
+}

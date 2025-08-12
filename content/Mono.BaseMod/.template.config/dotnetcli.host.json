@@ -1,0 +1,37 @@
+{
+	"$schema": "http://json.schemastore.org/dotnetcli.host",
+	"symbolInfo": {
+		"TargetFramework": {
+			"longName": "targetframework",
+			"shortName": "t"
+		},
+		"Description": {
+			"longName": "description",
+			"shortName": "d"
+		},
+		"Version": {
+			"longName": "version",
+			"shortName": "v"
+		},
+		"Game": {
+			"longName": "gamename",
+			"shortName": "g"
+		},
+		"AppDataPath": {
+			"longName": "appdatapath",
+			"shortName": "a"
+		},
+		"GameDataPath": {
+			"longName": "gamedatapath",
+			"shortName": "data"
+		},
+		"LogFileName": {
+			"longName": "logfile",
+			"shortName": "l"
+		},
+		"ScannerRegex": {
+			"longName": "regex",
+			"shortName": "r"
+		}
+	}
+}
