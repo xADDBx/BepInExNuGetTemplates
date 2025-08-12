@@ -17,12 +17,12 @@
   - Open Windows command prompt (cmd.exe) in the directory which should contain project folder
   - `dotnet new <TemplateName> -n <ModID> -d "<Mod Name>" -g "<Game Name>" -a "<Path/To/Game/AppData>" -data "<GameDataFolderName>"`  (Replace the `<value>` placeholder with actual values; See a list of TemplateNames just below.)
   - e.g. `dotnet new bepinexmonomod -n MyAmazingMod -d "My Amazing Mod" -g Peak -a "%LocalAppData%Low\LandCrab\PEAK" -data "PEAK_Data"`
-  - Open the resulting project (open the .sln file with Visual Studio) and **Build resulting project once to publicize**
-  - Restart your IDE to rebuild cache if there are still red underlines
+  - Open the resulting project (open the .sln file with Visual Studio)
 
 ## Existing Template:
 
 - `bepinexmonomod`  - BepInEx Template for a Unity Mono game.
+- `bepinexil2cppmod` - BepInEx Template for a Unity Il2Cpp game.
 
 After that you should working setup for a UnityModManager mod which:
 
