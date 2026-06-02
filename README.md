@@ -18,8 +18,8 @@
   - `dotnet new <TemplateName> -n <ModID> -D "<Mod Name>" -G "<Game Name>" -A "<Path/To/Game/AppData>" -P "<GameDataFolderName>"`  (Replace the `<value>` placeholder with actual values; See a list of TemplateNames just below.)
   - Open the resulting project (open the .sln file with Visual Studio)
   - Examples: 
-    - `dotnet new bepinexmonomod -n MyAmazingMod -D "My Amazing Mod" -G Peak -A "$(LocalAppData)Low\LandCrab\PEAK" -P "PEAK_Data"`
-    - `dotnet new bepinexil2cppmod -n MyAmazingIl2CppMod -D "My Amazing Mod" -G NoRestForTheWicked -A "$(LocalAppData)Low\Moon Studios\NoRestForTheWicked"` (Note: Il2Cpp mods don't have a -P option)
+    - `dotnet new bepinexmonomod -n MyAmazingMod -D "My Amazing Mod" -G Peak -A '$(LocalAppData)Low\LandCrab\PEAK' -P "PEAK_Data"`
+    - `dotnet new bepinexil2cppmod -n MyAmazingIl2CppMod -D "My Amazing Mod" -G NoRestForTheWicked -A '$(LocalAppData)Low\Moon Studios\NoRestForTheWicked'` (Note: Il2Cpp mods don't have a -P option)
 
 ## Existing Template:
 
