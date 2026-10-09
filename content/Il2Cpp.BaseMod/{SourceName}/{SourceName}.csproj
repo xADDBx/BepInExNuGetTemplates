@@ -30,9 +30,10 @@
 	<ItemGroup>
 		<PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" IncludeAssets="build; contentfiles" Version="0.4.2" PrivateAssets="all" />
 		<PackageReference Include="MicroUtils.HarmonyAnalyzers" IncludeAssets="runtime; build; native; contentfiles; analyzers" Version="*-*" PrivateAssets="all" />
+		<PackageReference Include="Microsoft.Unity.Analyzers" Version="1.28.0" PrivateAssets="all" />
 	</ItemGroup>
 	<Target Name="GenerateCustomPropsFile" Condition="$({Game}InstallDir) == ''">
-		<Exec Command="findstr /C:&quot;[Subsystems]&quot; &quot;$({Game}Data)\{LogFileName}&quot;" IgnoreExitCode="true" ConsoleToMSBuild="true">
+		<Exec Command="findstr /C:&quot;{LogFilter}&quot; &quot;$({Game}Data)\{LogFileName}&quot;" IgnoreExitCode="true" ConsoleToMSBuild="true">
 			<Output TaskParameter="ExitCode" PropertyName="ExitCode" />
 			<Output TaskParameter="ConsoleOutput" PropertyName="MonoPathLine" />
 		</Exec>
@@ -52,6 +53,6 @@
 &lt;/Project&gt;" Overwrite="true" Encoding="utf-8" />
 	</Target>
 	<Target Name="DeleteCustomPropsFile" BeforeTargets="Clean">
-		<Delete Files="GamePath.props" />
+		<Delete Files="$(SolutionDir)GamePath.props" />
 	</Target>
 </Project>

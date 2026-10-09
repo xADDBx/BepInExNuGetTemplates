@@ -3,7 +3,7 @@
 ### Environmental Setup (Only needs to be done the first time)
 - Open Windows command prompt (cmd.exe)
 - Install .NET SDK with the command:  
-  `winget install Microsoft.Dotnet.SDK.9`
+  `winget install Microsoft.Dotnet.SDK.10`
 - I suggest using Visual Studio 2022 to edit the project. Use the following cmd command to install it:  
   `winget install Microsoft.VisualStudio.2022.Community --override "--add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.Net.Component.4.8.1.SDK"`
 - If you haven't done this before (If you're not sure, just execute in anyways), you might need to add the NuGet repository as a source with the following command:  
@@ -16,7 +16,7 @@
 - Create the project via CLI:
   - Open Windows command prompt (cmd.exe) in the directory which should contain project folder
   - `dotnet new <TemplateName> -n <ModID> -D "<Mod Name>" -G "<Game Name>" -A "<Path/To/Game/AppData>" -P "<GameDataFolderName>"`  (Replace the `<value>` placeholder with actual values; See a list of TemplateNames just below.)
-  - Open the resulting project (open the .sln file with Visual Studio)
+  - Open the resulting project (open the .slnx file with Visual Studio)
   - Examples: 
     - `dotnet new bepinexmonomod -n MyAmazingMod -D "My Amazing Mod" -G Peak -A '$(LocalAppData)Low\LandCrab\PEAK' -P "PEAK_Data"`
     - `dotnet new bepinexil2cppmod -n MyAmazingIl2CppMod -D "My Amazing Mod" -G NoRestForTheWicked -A '$(LocalAppData)Low\Moon Studios\NoRestForTheWicked'` (Note: Il2Cpp mods don't have a -P option)
@@ -26,7 +26,7 @@
 - `bepinexmonomod`  - BepInEx Template for a Unity Mono game.
 - `bepinexil2cppmod` - BepInEx Template for a Unity Il2Cpp game.
 
-After that you should working setup for a UnityModManager mod which:
+After that you should have a working setup for a BepInEx mod which:
 
 - automatically installs the mod when building
 - has the correct path and already references a few assemblies (with some of them publicized)

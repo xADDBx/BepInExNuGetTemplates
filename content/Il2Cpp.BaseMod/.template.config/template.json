@@ -58,6 +58,13 @@
 			"replaces": "{LogFileName}",
 			"defaultValue": "Player.log"
 		},
+		"LogFilter": {
+			"type": "parameter",
+			"description": "Only log lines containing this text are checked with the regex",
+			"datatype": "text",
+			"replaces": "{LogFilter}",
+			"defaultValue": "[Subsystems]"
+		},
 		"ScannerRegex": {
 			"type": "parameter",
 			"description": "Regex that is applied to the log file to extract the game path",

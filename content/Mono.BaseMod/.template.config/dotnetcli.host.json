@@ -29,6 +29,10 @@
 			"longName": "logfile",
 			"shortName": "L"
 		},
+		"LogFilter": {
+			"longName": "logfilter",
+			"shortName": "F"
+		},
 		"ScannerRegex": {
 			"longName": "regex",
 			"shortName": "R"
